@@ -1,19 +1,17 @@
-class Students:
-    def __init__(self, name, roll):
-        self.name = name
-        self.roll = roll
+class Vs:
+    def execute(self):
+        print('vs code')
 
-    def show(self):
-        print(self.name, self.roll)
+class Py():
+    def execute(self):
+        print('py charm')
 
-    class Laptop:
-        def __init__(self):
-            self.ram = 12
-            self.brand =  'dell'
-        def show(self):
-            print(self.ram, self.brand)
 
-s1 = Students('sano', 12)
-s1.show()
-laptop = Students.Laptop()
-laptop.show()
+class Laptop:
+    def editor(self, ide):
+        ide.execute()
+
+
+lap1 = Laptop()
+ide = Vs()
+lap1.editor(ide)
