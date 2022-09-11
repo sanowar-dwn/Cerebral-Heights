@@ -1,4 +1,4 @@
-class Vs:
+class vs:
     def execute(self):
         print('vs code')
 
@@ -13,5 +13,5 @@ class Laptop:
 
 
 lap1 = Laptop()
-ide = Vs()
+ide = vs()
 lap1.editor(ide)
