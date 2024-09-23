@@ -1,0 +1,10 @@
+Teacher
+Student
+StudentRegistrationForm
+Gallery
+contact us
+Courses/Packages
+siteSettings
+faq
+
+
