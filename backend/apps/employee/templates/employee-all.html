@@ -1,0 +1,57 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block content %}
+<div class="rbt-team-area bg-color-extra2 rbt-section-gap">
+    <div class="container">
+        <div class="row mb--60">
+            <div class="col-lg-12">
+                <div class="section-title text-center">
+                    <span class="subtitle bg-pink-opacity">Our Team</span>
+                    <h2 class="title">Word Class Best Instructor</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row row--15 mt_dec--30">
+            {% for employee in employee_all %}
+            <!-- Start Single Team  -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--30">
+                <div class="team">
+                    <a href="{% url "employee_details" employee.id %}">
+                        <div class="thumbnail"><img src="{{employee.profile_picture.url}}" alt="Blog Images">
+                        </div>
+                    </a>
+                    <div class="content">
+                        <a href="{% url "employee_details" employee.id %}">
+                            <h4 class="title">{{employee.full_name}}</h4>
+                            <p class="designation">{{employee.designation}}</p>
+                        </a>
+                    </div>
+                    <ul class="social-icon">
+                        {% if employee.facebook %}
+                            <li><a href="{{ employee.facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        {% endif %}
+                        
+                        {% if employee.linkedin %}
+                            <li><a href="{{ employee.linkedin }}" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                        {% endif %}
+                        
+                        {% if employee.twitter %}
+                            <li><a href="{{ employee.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        {% endif %}
+                        
+                        {% if employee.instagram %}
+                            <li><a href="{{ employee.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        {% endif %}
+                        
+                        {% if employee.youtube %}
+                            <li><a href="{{ employee.youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <!-- End Single Team  -->
+             {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
