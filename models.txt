@@ -1,0 +1,77 @@
+Teacher
+Student
+StudentRegistrationForm
+Gallery
+contact us
+Courses/Packages
+siteSettings
+faq
+reviews
+
+
+Pages:
+about us
+Index
+Contact Us
+All Employees
+Employee Details
+Student Registration Portal
+Gallery 
+reviews
+
+
+
+MODEL STRUCTURE:
+ 
+<-- SITE SETTINGS --->
+site_title 
+fav_icon 
+logo
+phone_number
+email
+location 
+header_message
+facebook
+instagram
+youtube
+linkedin
+twitter
+banner_title
+
+<-- Banner Slider -->
+Image
+Title
+Sub Title
+is_active
+
+
+<-- Reviews -->
+image
+name
+review_text
+
+
+<-- Gallery -->
+image
+title
+
+
+<-- Employee -->
+Image
+name
+designation
+facebook
+instagram
+twitter
+linkedin
+youtube
+banner
+biography
+phone_number 
+email
+
+<-- FAQ -->
+question 
+answer
+
+
