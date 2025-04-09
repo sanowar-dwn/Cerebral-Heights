@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.core',
     'apps.employee',
+    'apps.gallery',
+    'apps.review',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +69,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'apps.core.context_processors.all_employees',
+                'apps.core.context_processors.all_gallery',
+                'apps.core.context_processors.all_review',
+                'apps.core.context_processors.all_subject',
             ],
         },
     },

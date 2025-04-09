@@ -120,122 +120,23 @@
             </div>
         </div>
         <div class="row g-5 mt--20">
-            <!-- Start Category Box Layout  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a class="rbt-cat-box rbt-cat-box-1 text-center" href="course-filter-one-toggle.html">
-                    <div class="inner">
-                        <div class="icons">
-                            <img src="{% static "assets/images/category/web-design.png" %}" alt="Icons Images">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- End Category Box Layout  -->
+            {% for subject_item in all_subject %}
 
             <!-- Start Category Box Layout  -->
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <a class="rbt-cat-box rbt-cat-box-1 text-center" href="course-filter-one-toggle.html">
                     <div class="inner">
                         <div class="icons">
-                            <img src="{% static "assets/images/category/design.png" %}" alt="Icons Images">
+                            <img src="{{subject_item.icon.url}}" alt="Icons Images">
                         </div>
                         <div class="content">
-                            <h5 class="title">Graphic Design</h5>
+                            <h5 class="title">{{subject_item.title}}</h5>
                         </div>
                     </div>
                 </a>
             </div>
             <!-- End Category Box Layout  -->
-
-            <!-- Start Category Box Layout  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a class="rbt-cat-box rbt-cat-box-1 text-center" href="course-filter-one-toggle.html">
-                    <div class="inner">
-                        <div class="icons">
-                            <img src="{% static "assets/images/category/personal.png" %}" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h5 class="title">Personal Development</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- End Category Box Layout  -->
-
-            <!-- Start Category Box Layout  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a class="rbt-cat-box rbt-cat-box-1 text-center" href="course-filter-one-toggle.html">
-                    <div class="inner">
-                        <div class="icons">
-                            <img src="{% static "assets/images/category/server.png" %}" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h5 class="title">IT and Software</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- End Category Box Layout  -->
-
-            <!-- Start Category Box Layout  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a class="rbt-cat-box rbt-cat-box-1 text-center" href="course-filter-one-toggle.html">
-                    <div class="inner">
-                        <div class="icons">
-                            <img src="{% static "assets/images/category/pantone.png" %}" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h5 class="title">Sales Marketing</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- End Category Box Layout  -->
-
-            <!-- Start Category Box Layout  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a class="rbt-cat-box rbt-cat-box-1 text-center" href="course-filter-one-toggle.html">
-                    <div class="inner">
-                        <div class="icons">
-                            <img src="{% static "assets/images/category/paint-palette" %}.png" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h5 class="title">Art & Humanities</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- End Category Box Layout  -->
-
-            <!-- Start Category Box Layout  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a class="rbt-cat-box rbt-cat-box-1 text-center" href="course-filter-one-toggle.html">
-                    <div class="inner">
-                        <div class="icons">
-                            <img src="{% static "assets/images/category/smartphone.png" %}" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h5 class="title">Mobile Application</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- End Category Box Layout  -->
-
-            <!-- Start Category Box Layout  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a class="rbt-cat-box rbt-cat-box-1 text-center" href="course-filter-one-toggle.html">
-                    <div class="inner">
-                        <div class="icons">
-                            <img src="{% static "assets/images/category/infographic.png" %}" alt="Icons Images">
-                        </div>
-                        <div class="content">
-                            <h5 class="title">Finance & Accounting</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- End Category Box Layout  -->
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -414,20 +315,19 @@
     </div>
     <div class="scroll-animation-wrapper no-overlay mt--50">
         <div class="scroll-animation scroll-right-left">
-
+            {% for review_item in all_review %}
             <!-- Start Single Testimonial  -->
             <div class="single-column-20 bg-theme-gradient-odd">
                 <div class="rbt-testimonial-box style-2">
                     <div class="inner">
                         <div class="description">
-                            <p class="subtitle-3">After the launch, vulputate at sapien sit amet,
-                                auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.</p>
+                            <p class="subtitle-3">{{review_item.text}}</p>
                             <div class="clint-info-wrapper">
                                 <div class="thumb">
-                                    <img src="{% static "assets/images/testimonial/client-01.png" %}" alt="Clint Images">
+                                    <img src="{{review_item.image.url}}" alt="Clint Images">
                                 </div>
                                 <div class="client-info">
-                                    <h5 class="title">Martha Maldonado, <span>CEO</span></h5>
+                                    <h5 class="title">{{review_item.name}}</h5>
                                 </div>
                             </div>
                         </div>
@@ -435,206 +335,7 @@
                 </div>
             </div>
             <!-- End Single Testimonial  -->
-            <!-- Start Single Testimonial  -->
-            <div class="single-column-20 bg-theme-gradient-odd">
-                <div class="rbt-testimonial-box style-2">
-                    <div class="inner">
-                        <div class="description">
-                            <p class="subtitle-3">After the launch, vulputate at sapien sit amet,
-                                auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.</p>
-                            <div class="clint-info-wrapper">
-                                <div class="thumb">
-                                    <img src="{% static "assets/images/testimonial/client-01.png" %}" alt="Clint Images">
-                                </div>
-                                <div class="client-info">
-                                    <h5 class="title">Martha Maldonado, <span>CEO</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Testimonial  -->
-            <!-- Start Single Testimonial  -->
-            <div class="single-column-20 bg-theme-gradient-odd">
-                <div class="rbt-testimonial-box style-2">
-                    <div class="inner">
-                        <div class="description">
-                            <p class="subtitle-3">After the launch, vulputate at sapien sit amet,
-                                auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.</p>
-                            <div class="clint-info-wrapper">
-                                <div class="thumb">
-                                    <img src="{% static "assets/images/testimonial/client-01.png" %}" alt="Clint Images">
-                                </div>
-                                <div class="client-info">
-                                    <h5 class="title">Martha Maldonado, <span>CEO</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Testimonial  -->
-            <!-- Start Single Testimonial  -->
-            <div class="single-column-20 bg-theme-gradient-odd">
-                <div class="rbt-testimonial-box style-2">
-                    <div class="inner">
-                        <div class="description">
-                            <p class="subtitle-3">After the launch, vulputate at sapien sit amet,
-                                auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.</p>
-                            <div class="clint-info-wrapper">
-                                <div class="thumb">
-                                    <img src="{% static "assets/images/testimonial/client-01.png" %}" alt="Clint Images">
-                                </div>
-                                <div class="client-info">
-                                    <h5 class="title">Martha Maldonado, <span>CEO</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Testimonial  -->
-            <!-- Start Single Testimonial  -->
-            <div class="single-column-20 bg-theme-gradient-odd">
-                <div class="rbt-testimonial-box style-2">
-                    <div class="inner">
-                        <div class="description">
-                            <p class="subtitle-3">After the launch, vulputate at sapien sit amet,
-                                auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.</p>
-                            <div class="clint-info-wrapper">
-                                <div class="thumb">
-                                    <img src="{% static "assets/images/testimonial/client-01.png" %}" alt="Clint Images">
-                                </div>
-                                <div class="client-info">
-                                    <h5 class="title">Martha Maldonado, <span>CEO</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Testimonial  -->
-            <!-- Start Single Testimonial  -->
-            <div class="single-column-20 bg-theme-gradient-odd">
-                <div class="rbt-testimonial-box style-2">
-                    <div class="inner">
-                        <div class="description">
-                            <p class="subtitle-3">After the launch, vulputate at sapien sit amet,
-                                auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.</p>
-                            <div class="clint-info-wrapper">
-                                <div class="thumb">
-                                    <img src="{% static "assets/images/testimonial/client-01.png" %}" alt="Clint Images">
-                                </div>
-                                <div class="client-info">
-                                    <h5 class="title">Martha Maldonado, <span>CEO</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Testimonial  -->
-            <!-- Start Single Testimonial  -->
-            <div class="single-column-20 bg-theme-gradient-odd">
-                <div class="rbt-testimonial-box style-2">
-                    <div class="inner">
-                        <div class="description">
-                            <p class="subtitle-3">After the launch, vulputate at sapien sit amet,
-                                auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.</p>
-                            <div class="clint-info-wrapper">
-                                <div class="thumb">
-                                    <img src="{% static "assets/images/testimonial/client-01.png" %}" alt="Clint Images">
-                                </div>
-                                <div class="client-info">
-                                    <h5 class="title">Martha Maldonado, <span>CEO</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Testimonial  -->
-            <!-- Start Single Testimonial  -->
-            <div class="single-column-20 bg-theme-gradient-odd">
-                <div class="rbt-testimonial-box style-2">
-                    <div class="inner">
-                        <div class="description">
-                            <p class="subtitle-3">After the launch, vulputate at sapien sit amet,
-                                auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.</p>
-                            <div class="clint-info-wrapper">
-                                <div class="thumb">
-                                    <img src="{% static "assets/images/testimonial/client-01.png" %}" alt="Clint Images">
-                                </div>
-                                <div class="client-info">
-                                    <h5 class="title">Martha Maldonado, <span>CEO</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Testimonial  -->
-            <!-- Start Single Testimonial  -->
-            <div class="single-column-20 bg-theme-gradient-odd">
-                <div class="rbt-testimonial-box style-2">
-                    <div class="inner">
-                        <div class="description">
-                            <p class="subtitle-3">After the launch, vulputate at sapien sit amet,
-                                auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.</p>
-                            <div class="clint-info-wrapper">
-                                <div class="thumb">
-                                    <img src="{% static "assets/images/testimonial/client-01.png" %}" alt="Clint Images">
-                                </div>
-                                <div class="client-info">
-                                    <h5 class="title">Martha Maldonado, <span>CEO</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Testimonial  -->
-            <!-- Start Single Testimonial  -->
-            <div class="single-column-20 bg-theme-gradient-odd">
-                <div class="rbt-testimonial-box style-2">
-                    <div class="inner">
-                        <div class="description">
-                            <p class="subtitle-3">After the launch, vulputate at sapien sit amet,
-                                auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.</p>
-                            <div class="clint-info-wrapper">
-                                <div class="thumb">
-                                    <img src="{% static "assets/images/testimonial/client-01.png" %}" alt="Clint Images">
-                                </div>
-                                <div class="client-info">
-                                    <h5 class="title">Martha Maldonado, <span>CEO</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Testimonial  -->
-            <!-- Start Single Testimonial  -->
-            <div class="single-column-20 bg-theme-gradient-odd">
-                <div class="rbt-testimonial-box style-2">
-                    <div class="inner">
-                        <div class="description">
-                            <p class="subtitle-3">After the launch, vulputate at sapien sit amet,
-                                auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.</p>
-                            <div class="clint-info-wrapper">
-                                <div class="thumb">
-                                    <img src="{% static "assets/images/testimonial/client-01.png" %}" alt="Clint Images">
-                                </div>
-                                <div class="client-info">
-                                    <h5 class="title">Martha Maldonado, <span>CEO</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Testimonial  -->
+            {% endfor %}
         </div>
     </div>
 
@@ -655,78 +356,25 @@
                 <div class="swiper event-activation-1 rbt-arrow-between rbt-dot-bottom-center pb--60 icon-bg-primary">
 
                     <div class="swiper-wrapper">
+                        {% for gallery_item in all_gallery %}
                         <!-- Start Single Slide  -->
                         <div class="swiper-slide">
                             <div class="single-slide">
                                 <div class="rbt-card event-grid-card variation-01 rbt-hover">
                                     <div class="rbt-card-img">
                                         <a href="event-details.html">
-                                            <img src="{% static "assets/images/event/grid-type-02.jpg" %}" alt="Card image">
+                                            <img src="{{gallery_item.image.url}}" alt="Card image">
                                         </a>
                                     </div>
                                     <div class="rbt-card-body">
-                                        <h4 class="rbt-card-title"><a href="event-details.html">Painting Art Contest 2020 for histudy
-                                                Clud</a></h4>
+                                        <h4 class="rbt-card-title"><a href="event-details.html">{{gallery_item.title}}</a></h4>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- End Single Slide  -->
-                        <!-- Start Single Slide  -->
-                        <div class="swiper-slide">
-                            <div class="single-slide">
-                                <div class="rbt-card event-grid-card variation-01 rbt-hover">
-                                    <div class="rbt-card-img">
-                                        <a href="event-details.html">
-                                            <img src="{% static "assets/images/event/grid-type-02.jpg" %}" alt="Card image">
-                                        </a>
-                                    </div>
-                                    <div class="rbt-card-body">
-                                        <h4 class="rbt-card-title"><a href="event-details.html">Painting Art Contest 2020 for histudy
-                                                Clud</a></h4>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Slide  -->
-                        <!-- Start Single Slide  -->
-                        <div class="swiper-slide">
-                            <div class="single-slide">
-                                <div class="rbt-card event-grid-card variation-01 rbt-hover">
-                                    <div class="rbt-card-img">
-                                        <a href="event-details.html">
-                                            <img src="{% static "assets/images/event/grid-type-02.jpg" %}" alt="Card image">
-                                        </a>
-                                    </div>
-                                    <div class="rbt-card-body">
-                                        <h4 class="rbt-card-title"><a href="event-details.html">Painting Art Contest 2020 for histudy
-                                                Clud</a></h4>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Slide  -->
-                        <!-- Start Single Slide  -->
-                        <div class="swiper-slide">
-                            <div class="single-slide">
-                                <div class="rbt-card event-grid-card variation-01 rbt-hover">
-                                    <div class="rbt-card-img">
-                                        <a href="event-details.html">
-                                            <img src="{% static "assets/images/event/grid-type-02.jpg" %}" alt="Card image">
-                                        </a>
-                                    </div>
-                                    <div class="rbt-card-body">
-                                        <h4 class="rbt-card-title"><a href="event-details.html">Painting Art Contest 2020 for histudy
-                                                Clud</a></h4>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Slide  -->
+                        {% endfor %}
 
                     </div>
 
@@ -757,87 +405,51 @@
         <div class="row mb--60">
             <div class="col-lg-12">
                 <div class="section-title text-center">
-                    <span class="subtitle bg-pink-opacity">Our Instructor</span>
+                    <span class="subtitle bg-pink-opacity">Our Team</span>
                     <h2 class="title">Word Class Best Instructor</h2>
-                    <p class="description has-medium-font-size mt--20">There are many variations of passages of the
-                        Ipsum available, but the majority have suffered alteration in some form, by injected humour.
-                    </p>
                 </div>
             </div>
         </div>
         <div class="row row--15 mt_dec--30">
+            {% for employee in employee_all %}
             <!-- Start Single Team  -->
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--30">
                 <div class="team">
-                    <div class="thumbnail"><img src="{% static "assets/images/team/team-05.jpg" %}" alt="Blog Images">
-                    </div>
+                    <a href="{% url "employee_details" employee.id %}">
+                        <div class="thumbnail"><img src="{{employee.profile_picture.url}}" alt="Blog Images">
+                        </div>
+                    </a>
                     <div class="content">
-                        <h4 class="title">Aaron Griffin</h4>
-                        <p class="designation">Depertment Head</p>
+                        <a href="{% url "employee_details" employee.id %}">
+                            <h4 class="title">{{employee.full_name}}</h4>
+                            <p class="designation">{{employee.designation}}</p>
+                        </a>
                     </div>
                     <ul class="social-icon">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        {% if employee.facebook %}
+                            <li><a href="{{ employee.facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        {% endif %}
+                        
+                        {% if employee.linkedin %}
+                            <li><a href="{{ employee.linkedin }}" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                        {% endif %}
+                        
+                        {% if employee.twitter %}
+                            <li><a href="{{ employee.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        {% endif %}
+                        
+                        {% if employee.instagram %}
+                            <li><a href="{{ employee.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        {% endif %}
+                        
+                        {% if employee.youtube %}
+                            <li><a href="{{ employee.youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
             <!-- End Single Team  -->
-
-            <!-- Start Single Team  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--30">
-                <div class="team">
-                    <div class="thumbnail"><img src="{% static "assets/images/team/team-09.jpg" %}" alt="Blog Images">
-                    </div>
-                    <div class="content">
-                        <h4 class="title">Rafiq Bali</h4>
-                        <p class="designation">Depertment Head</p>
-                    </div>
-                    <ul class="social-icon">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- End Single Team  -->
-
-            <!-- Start Single Team  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--30">
-                <div class="team">
-                    <div class="thumbnail"><img src="{% static "assets/images/team/team-03.jpg" %}" alt="Blog Images">
-                    </div>
-                    <div class="content">
-                        <h4 class="title">Fatima Usa</h4>
-                        <p class="designation">Depertment Head</p>
-                    </div>
-                    <ul class="social-icon">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- End Single Team  -->
-
-            <!-- Start Single Team  -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--30">
-                <div class="team">
-                    <div class="thumbnail"><img src="{% static "assets/images/team/team-07.jpg" %}" alt="Blog Images">
-                    </div>
-                    <div class="content">
-                        <h4 class="title">John Due</h4>
-                        <p class="designation">Depertment Head</p>
-                    </div>
-                    <ul class="social-icon">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- End Single Team  -->
-
+             {% endfor %}
         </div>
     </div>
 </div>
