@@ -1,0 +1,29 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Start breadcrumb Area -->
+    <div class="rbt-breadcrumb-default ptb--100 ptb_md--50 ptb_sm--30 bg-gradient-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inner text-center">
+                        <h2 class="title">{{gallery_item.title}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb Area -->
+
+    <div class="rbt-gallery-area">
+        <div class="row g-0 parent-gallery-container">
+            {% for gallery_item_image in gallery_item_images %}
+            <a href="{{gallery_item_image.image.url}}" class="child-gallery-single col-lg-2 col-md-4 col-sm-6 col-6">
+                <div class="rbt-gallery">
+                    <img class="w-100" src="{{gallery_item_image.image.url}}" alt="Gallery Images">
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
