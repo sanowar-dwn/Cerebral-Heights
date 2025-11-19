@@ -14054,6 +14054,7 @@ span.transparent-button:hover i {
 }
 .rbt-card .rbt-card-img a img {
   width: 100%;
+  height: 200px;
   transition: 0.5s;
   object-fit: cover;
   border-radius: var(--radius);
@@ -19622,9 +19623,9 @@ ul.testimonial-thumb-wrapper li a.active .thumb img {
   }
 }
 .rbt-testimonial-box.style-2 .clint-info-wrapper .thumb {
-  height: 40px;
+  height: 70px;
   padding: 2px;
-  min-width: 40px;
+  min-width: 70px;
 }
 .rbt-testimonial-box.style-2 .clint-info-wrapper .thumb img {
   height: 100%;
@@ -25115,6 +25116,7 @@ blockquote.has-text-align-right cite,
   height: 750px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 @media only screen and (max-width: 1199px) {
   .rbt-banner-6.variation-03 {
